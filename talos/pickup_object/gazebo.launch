@@ -75,6 +75,8 @@
     <node name="path_execution_fsm" pkg="hpp_ros_interface"
       type="path_execution_fsm.py"
       output="screen" />
+    <node name="path_execution_supervision" pkg="hpp_ros_interface"
+      type="rqt_agimus_supervision" />
       <!--machine="controller"-->
     <node
       name="start_supervisor" pkg="sot_hpp"
