@@ -1,0 +1,12 @@
+<launch>
+  <param name="/sot_controller/dt" value="0.001"/>
+  <group ns="hpp" >
+    <param name="estimation/std_dev" value="0.005"/>
+    <param name="estimation/transition/default" value="3"/>
+    <param name="estimation/state/estimation" value="2"/>
+    <node name="hpp_node" pkg="hpp_ros_interface" type="hpp_node.py"
+      args="hpp-manipulation-server"
+      output="screen" />
+  </group>
+</launch>
+
