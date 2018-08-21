@@ -55,15 +55,13 @@ def makeSupervisorWithFactory (robot):
     factory.setupFrames (srdf["grippers"], srdf["handles"], robot, disabledGrippers = ["table/pose"])
     factory.addAffordance (
         Affordance ("talos/left_gripper", "box/handle1",
-            openControlType="position_torque", closeControlType="position_torque",
-            # openControlType="position", closeControlType="position",
-            refs = { "angle_open": (0,), "angle_close": (-0.5,), "torque": (-10.,) },
+            openControlType="torque", closeControlType="torque",
+            refs = { "angle_open": (0,), "angle_close": (-0.5,), "torque": (-0.05,) },
             simuParams = { "refPos": (-0.2,) }))
     factory.addAffordance (
         Affordance ("talos/left_gripper", None,
             openControlType="position", closeControlType="position",
-            # openControlType="position", closeControlType="position",
-            refs = { "angle_open": (0,), "angle_close": (-0.5,), "torque": (-10.,) },
+            refs = { "angle_open": (0,), "angle_close": (-0.5,), "torque": (-0.05,) },
             simuParams = { "refPos": (-0.2,) }))
     factory.generate ()
 
